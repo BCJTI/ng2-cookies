@@ -1,34 +1,35 @@
 {
-  "name": "ng2-cookies",
-  "version": "0.1.0",
-  "scripts": {
-    "test": "tsc && karma start",
-    "prepublish": "tsc",
-    "tsc": "tsc"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/BCJTI/ng2-cookies"
-  },
-  "author": {
-    "name": "Felipe Rebelo Lopes",
-    "email": "carcamano@users.noreply.github.com"
-  },
-  "keywords": [
-    "angular",
-    "angular2"
-  ],
-  "bugs": {
-    "url": "https://github.com/BCJTI/ng2-cookies/issues"
-  },
-  "main": "ng2-cookies.js",
-  "typings": "./ng2-cookies.d.ts",
-  "dependencies": {
-    "angular2": "^2.0.0-alpha.46",
-    "typescript": "^1.6.2"
-  },
-  "devDependencies": {},
-  "engines": {
-    "node": ">=0.8.0"
-  }
+	"name": "ng2-cookies",
+	"version": "0.1.0",
+	"scripts": {
+		"test": "tsc && karma start",
+		"prepublish": "tsc",
+		"tsc": "tsc"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/BCJTI/ng2-cookies"
+	},
+	"author": {
+		"name": "Felipe Rebelo Lopes",
+		"email": "carcamano@users.noreply.github.com"
+	},
+	"keywords": [
+		"angular",
+		"angular2",
+		"cookie",
+		"cookies"
+	],
+	"bugs": {
+		"url": "https://github.com/BCJTI/ng2-cookies/issues"
+	},
+	"main": "ng2-cookies.js",
+	"typings": "./ng2-cookies.d.ts",
+	"dependencies": {},
+	"devDependencies": {
+		"typescript": "^1.7.3"
+	},
+	"engines": {
+		"node": ">=4.1.0"
+	}
 }

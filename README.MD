@@ -10,5 +10,5 @@ $ npm install ng2-cookies
 
 ## License
 
-MIT © [Felipe Rebelo Lopes](carcamano@users.noreply.github.com)
+MIT © [Felipe Rebelo Lopes](http://github.com/carcamano)
 

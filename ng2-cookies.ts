@@ -1,3 +1,7 @@
-export * from './src/directives';
 export * from './src/services';
-export * from './src/pipes';
+
+import * as services from './src/services';
+
+export default {
+	services: services
+};
