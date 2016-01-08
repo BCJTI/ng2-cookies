@@ -22,9 +22,9 @@ export class Cookie {
 	 *
 	 * @param  {string} name Cookie's identification
 	 * @param  {string} value Cookie's value
-	 * @param  {number} expires? Cookie's expiration date in days from now. If it's undefined the cookie is a session Cookie
-	 * @param  {string} path? Path relative to the domain where the cookie should be avaiable. Default /
-	 * @param  {string} domain? Domain where the cookie should be avaiable. Default current domain
+	 * @param  {number} expires Cookie's expiration date in days from now. If it's undefined the cookie is a session Cookie
+	 * @param  {string} path Path relative to the domain where the cookie should be avaiable. Default /
+	 * @param  {string} domain Domain where the cookie should be avaiable. Default current domain
 	 */
 	public static setCookie(name: string, value: string, expires?: number, path?: string, domain?: string) {
 		let myWindow: any = window;
@@ -49,8 +49,8 @@ export class Cookie {
 	 * Removes specified Cookie
 	 *
 	 * @param  {string} name Cookie's identification
-	 * @param  {string} path? Path relative to the domain where the cookie should be avaiable. Default /
-	 * @param  {string} domain? Domain where the cookie should be avaiable. Default current domain
+	 * @param  {string} path Path relative to the domain where the cookie should be avaiable. Default /
+	 * @param  {string} domain Domain where the cookie should be avaiable. Default current domain
 	 */
 	public static deleteCookie(name: string, path?: string, domain?: string) {
 		// If the cookie exists
