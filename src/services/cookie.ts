@@ -12,7 +12,7 @@ export class Cookie {
 	public static getCookie(name: string): string {
 		let myWindow: any = window;
 		name = myWindow.escape(name);
-		let regexp = new RegExp('(?:^' + name + '|;\s*' + name + ')=(.*?)(?:;|$)', 'g');
+		let regexp = new RegExp('(?:^' + name + '|;\\s*' + name + ')=(.*?)(?:;|$)', 'g');
 		let result = regexp.exec(document.cookie);
 		return (result === null) ? null : myWindow.unescape(result[1]);
 	}
