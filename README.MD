@@ -21,7 +21,14 @@ Cookie.set('cookieName', 'cookieValue', 10, '/myapp/', 'mydomain.com');
 
 let myCookie = Cookie.get('cookieName');
 
+/*
+* List of cookies as Object, like: { cookieName: "cookieValue", cookieName2: "cookieValue2" ... etc }
+*/
+let cookielist = Cookie.getAll();
+
 Cookie.delete('cookieName');
+Cookie.deleteAll();
+
 ```
 
 
