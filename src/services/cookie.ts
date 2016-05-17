@@ -9,7 +9,7 @@ export class Cookie {
 	 * @param  {string} name Identification of the Cookie
 	 * @returns The Cookie's value
 	 */
-	public static getCookie(name: string): string {
+	public static get(name: string): string {
 		let myWindow: any = window;
 		name = myWindow.escape(name);
 		let regexp = new RegExp('(?:^' + name + '|;\\s*' + name + ')=(.*?)(?:;|$)', 'g');
@@ -26,7 +26,7 @@ export class Cookie {
 	 * @param  {string} path Path relative to the domain where the cookie should be avaiable. Default /
 	 * @param  {string} domain Domain where the cookie should be avaiable. Default current domain
 	 */
-	public static setCookie(name: string, value: string, expires?: number, path?: string, domain?: string) {
+	public static set(name: string, value: string, expires?: number, path?: string, domain?: string) {
 		let myWindow: any = window;
 		let cookieStr = myWindow.escape(name) + '=' + myWindow.escape(value) + ';';
 
@@ -52,7 +52,7 @@ export class Cookie {
 	 * @param  {string} path Path relative to the domain where the cookie should be avaiable. Default /
 	 * @param  {string} domain Domain where the cookie should be avaiable. Default current domain
 	 */
-	public static deleteCookie(name: string, path?: string, domain?: string) {
+	public static delete(name: string, path?: string, domain?: string) {
 		// If the cookie exists
 		if (Cookie.getCookie(name)) {
 			Cookie.setCookie(name, '', -1, path, domain);
