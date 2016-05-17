@@ -18,6 +18,26 @@ export class Cookie {
 	}
 
 	/**
+	 * Retrieves a a list of all cookie avaiable
+	 *
+	 * @returns Object with all Cookies
+	 */
+	public static getAll(): any {
+		let cookies: any = {};
+
+		if (document.cookie && document.cookie != '') {
+			let split = document.cookie.split(';');
+			for (let i = 0; i < split.length; i++) {
+				let currCookie = split[i].split('=');
+				currCookie[0] = currCookie[0].replace(/^ /, '');
+				cookies[decodeURIComponent(currCookie[0])] = decodeURIComponent(currCookie[1]);
+			}
+		}
+
+		return cookies;
+	}
+
+	/**
 	 * Save the Cookie
 	 *
 	 * @param  {string} name Cookie's identification
@@ -58,5 +78,18 @@ export class Cookie {
 			Cookie.setCookie(name, '', -1, path, domain);
 		}
 	}
+
+	/**
+	 * Delete all cookie avaiable
+	 */
+	public static deleteAll(): any {
+		let cookies: any = Cookie.getAll();
+
+		for (let cookie in cookies) {
+			Cookie.delete(cookie);
+		}
+
+	}
+
 
 }
