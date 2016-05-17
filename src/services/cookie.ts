@@ -83,12 +83,7 @@ export class Cookie {
 	 * Delete all cookie avaiable
 	 */
 	public static deleteAll(): any {
-		let cookies: any = Cookie.getAll();
-
-		for (let cookieName in cookies) {
-			Cookie.delete(cookieName);
-		}
-
+		document.cookie = '';
 	}
 
 
