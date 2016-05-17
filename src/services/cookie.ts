@@ -82,8 +82,13 @@ export class Cookie {
 	/**
 	 * Delete all cookie avaiable
 	 */
-	public static deleteAll(): any {
-		document.cookie = '';
+	public static deleteAll(path?: string, domain?: string): any {
+		let cookies: any = Cookie.getAll();
+
+		for (let cookieName in cookies) {
+			Cookie.delete(cookieName, path, domain);
+		}
+
 	}
 
 
