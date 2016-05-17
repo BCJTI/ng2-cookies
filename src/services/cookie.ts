@@ -74,8 +74,8 @@ export class Cookie {
 	 */
 	public static delete(name: string, path?: string, domain?: string) {
 		// If the cookie exists
-		if (Cookie.getCookie(name)) {
-			Cookie.setCookie(name, '', -1, path, domain);
+		if (Cookie.get(name)) {
+			Cookie.set(name, '', -1, path, domain);
 		}
 	}
 
