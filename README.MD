@@ -1,5 +1,5 @@
-[![Coverage Status](https://coveralls.io/repos/BCJTI/ng2-cookies/badge.svg?branch=master&service=github)](https://coveralls.io/github/BCJTI/ng2-cookies?branch=master) 
-[![npm version](https://badge.fury.io/js/ng2-cookies.svg)](http://badge.fury.io/js/ng2-cookies) 
+[![Coverage Status](https://coveralls.io/repos/BCJTI/ng2-cookies/badge.svg?branch=master&service=github)](https://coveralls.io/github/BCJTI/ng2-cookies?branch=master)
+[![npm version](https://badge.fury.io/js/ng2-cookies.svg)](http://badge.fury.io/js/ng2-cookies)
 
 
 
@@ -37,7 +37,12 @@ Cookie.deleteAll();
 ```
 
 
-## License
+# Contributors
+[<img alt="carcamano" src="https://avatars.githubusercontent.com/u/11354012?v=3&s=117" width="117">](https://github.com/carcamano) |[<img alt="Bigous" src="https://avatars.githubusercontent.com/u/6886560?v=3&s=117" width="117">](https://github.com/bigous) |
+:---: |:---: |
+[Carcamano](https://github.com/carcamano) |[Bigous](https://github.com/bigous) |
 
+
+## License
 MIT © [Felipe Rebelo Lopes](http://github.com/carcamano)
 
