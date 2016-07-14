@@ -45,8 +45,9 @@ export class Cookie {
 	 * @param  {number} expires Cookie's expiration date in days from now. If it's undefined the cookie is a session Cookie
 	 * @param  {string} path Path relative to the domain where the cookie should be avaiable. Default /
 	 * @param  {string} domain Domain where the cookie should be avaiable. Default current domain
+	 * @param  {boolean} secure If true, the cookie will only be available through a secured connection
 	 */
-	public static set(name: string, value: string, expires?: number, path?: string, domain?: string) {
+	public static set(name: string, value: string, expires?: number, path?: string, domain?: string, secure?: boolean) {
 		let myWindow: any = window;
 		let cookieStr = myWindow.escape(name) + '=' + myWindow.escape(value) + ';';
 
@@ -59,6 +60,9 @@ export class Cookie {
 		}
 		if (domain) {
 			cookieStr += 'domain=' + domain + ';';
+		}
+		if (secure) {
+			cookieStr += 'secure;';
 		}
 
 		// console.log(cookieStr);
