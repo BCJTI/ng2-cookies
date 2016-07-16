@@ -1,6 +1,3 @@
-[![Coverage Status](https://coveralls.io/repos/BCJTI/ng2-cookies/badge.svg?branch=master&service=github)](https://coveralls.io/github/BCJTI/ng2-cookies?branch=master)
-[![npm version](https://badge.fury.io/js/ng2-cookies.svg)](http://badge.fury.io/js/ng2-cookies)
-
 
 
 # ng2-cookies
