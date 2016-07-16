@@ -22,7 +22,7 @@ import { Cookie } from 'ng2-cookies/ng2-cookies';
 
 Cookie.set('cookieName', 'cookieValue');
 Cookie.set('cookieName', 'cookieValue', 10 /*days from now*/);
-Cookie.set('cookieName', 'cookieValue', 10, '/myapp/', 'mydomain.com');
+Cookie.set('cookieName', 'cookieValue', 10, '/myapp/', 'mydomain.com', true /* https only */ );
 
 let myCookie = Cookie.get('cookieName');
 
