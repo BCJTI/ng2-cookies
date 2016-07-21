@@ -4,6 +4,11 @@
 
 Simple library to deal with cookies in Angular2.
 
+## Compatibility Break v0 to v1
+
+Replaced deprecated window.escape to encodeURIComponent
+
+
 ## Installation
 
 To install this library, run:
