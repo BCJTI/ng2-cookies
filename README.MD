@@ -40,10 +40,9 @@ Cookie.deleteAll();
 
 
 # Contributors
-[<img alt="carcamano" src="https://avatars.githubusercontent.com/u/11354012?v=3&s=117" width="117">](https://github.com/carcamano) |[<img alt="Bigous" src="https://avatars.githubusercontent.com/u/6886560?v=3&s=117" width="117">](https://github.com/bigous) |
-:---: |:---: |
-[Carcamano](https://github.com/carcamano) |[Bigous](https://github.com/bigous) |
-
+[<img alt="carcamano" src="https://avatars.githubusercontent.com/u/11354012?v=3&s=117" width="117">](https://github.com/carcamano) |[<img alt="Bigous" src="https://avatars.githubusercontent.com/u/6886560?v=3&s=117" width="117">](https://github.com/bigous) |[<img alt="sasidhar" src="https://avatars.githubusercontent.com/u/897339?v=3&s=117" width="117">](https://github.com/sasidhar) |[<img alt="iloveyo123u1" src="https://avatars.githubusercontent.com/u/6580897?v=3&s=117" width="117">](https://github.com/iloveyo123u1) |[<img alt="etwillbefine" src="https://avatars.githubusercontent.com/u/6608072?v=3&s=117" width="117">](https://github.com/etwillbefine) |[<img alt="josx" src="https://avatars.githubusercontent.com/u/791137?v=3&s=117" width="117">](https://github.com/josx) |
+:---: |:---: |:---: |:---: |:---: |:---: |
+[Carcamano](https://github.com/carcamano) |[Bigous](https://github.com/bigous) |[Sasidhar](https://github.com/sasidhar) |[Iloveyo123u1](https://github.com/iloveyo123u1) |[Etwillbefine](https://github.com/etwillbefine) |[Josx](https://github.com/josx)|
 
 ## License
 MIT © [Felipe Rebelo Lopes](http://github.com/carcamano)
