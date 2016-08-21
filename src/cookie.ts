@@ -4,16 +4,33 @@
 export class Cookie {
 
 	/**
-	 * Retrieves a single cookie by it's name
-	 *
-	 * @param  {string} name Identification of the Cookie
-	 * @returns The Cookie's value
+	 * Checks the existence of a single cookie by it's name
+	 * 
+	 * @param  {string} name Identification of the cookie
+	 * @returns existence of the cookie
 	 */
-	public static get(name: string): string {
+	public static check(name: string): boolean {
 		name = encodeURIComponent(name);
 		let regexp = new RegExp('(?:^' + name + '|;\\s*' + name + ')=(.*?)(?:;|$)', 'g');
-		let result = regexp.exec(document.cookie);
-		return (result === null) ? null : decodeURIComponent(result[1]);
+		let exists = regexp.test(document.cookie);
+		return exists;
+	}
+
+	/**
+	 * Retrieves a single cookie by it's name if it exists
+	 *
+	 * @param  {string} name Identification of the Cookie
+	 * @returns The Cookie's value or false if the cookie doesn't exist
+	 */
+	public static get(name: string): string | boolean {
+		if (Cookie.check(name)) {
+			name = encodeURIComponent(name);
+			let regexp = new RegExp('(?:^' + name + '|;\\s*' + name + ')=(.*?)(?:;|$)', 'g');
+			let result = regexp.exec(document.cookie);
+			return decodeURIComponent(result[1]);
+		} else {
+			return false;
+		}	
 	}
 
 	/**
