@@ -29,6 +29,7 @@ export class Cookie {
 			let result = regexp.exec(document.cookie);
 			return decodeURIComponent(result[1]);
 		} else {
+			return '';
 		}	
 	}
 
