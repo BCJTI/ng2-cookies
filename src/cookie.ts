@@ -17,19 +17,18 @@ export class Cookie {
 	}
 
 	/**
-	 * Retrieves a single cookie by it's name if it exists
+	 * Retrieves a single cookie by it's name
 	 *
 	 * @param  {string} name Identification of the Cookie
-	 * @returns The Cookie's value or false if the cookie doesn't exist
+	 * @returns The Cookie's value
 	 */
-	public static get(name: string): string | boolean {
+	public static get(name: string): string  {
 		if (Cookie.check(name)) {
 			name = encodeURIComponent(name);
 			let regexp = new RegExp('(?:^' + name + '|;\\s*' + name + ')=(.*?)(?:;|$)', 'g');
 			let result = regexp.exec(document.cookie);
 			return decodeURIComponent(result[1]);
 		} else {
-			return false;
 		}	
 	}
 
