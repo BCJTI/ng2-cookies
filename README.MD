@@ -21,7 +21,7 @@ $ npm install ng2-cookies
 
 Edit the `vendorNpmFiles` array (path: `./angular-cli-build.js`).
 
-```
+```typescript
 module.exports = function(defaults) {
   return new Angular2App(defaults, {
     vendorNpmFiles: [
@@ -30,7 +30,7 @@ module.exports = function(defaults) {
 ```
 
 Also add `ng2-cookies` to the map and packages object in the `system-config.ts` (path: `./src/system-config.ts`).
-```
+```typescript
 const map: any = {
   'ng2-cookies': 'vendor/ng2-cookies'
 };
