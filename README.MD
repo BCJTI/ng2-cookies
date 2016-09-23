@@ -17,6 +17,32 @@ To install this library, run:
 $ npm install ng2-cookies
 ```
 
+### Angular-CLI install notes
+
+Edit the `vendorNpmFiles` array (path: `./angular-cli-build.js`).
+
+```
+module.exports = function(defaults) {
+  return new Angular2App(defaults, {
+    vendorNpmFiles: [
+      ...
+      'ng2-cookies/**/*.+(js|js.map)'
+```
+
+Also add `ng2-cookies` to the map and packages object in the `system-config.ts` (path: `./src/system-config.ts`).
+```
+const map: any = {
+  'ng2-cookies': 'vendor/ng2-cookies'
+};
+
+/** User packages configuration. */
+const packages: any = {
+  'ng2-cookies': {main: 'ng2-cookies.js', defaultExtension: 'js'},
+};
+```
+
+
+
 Usage:
 
 ```typescript
