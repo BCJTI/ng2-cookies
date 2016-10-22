@@ -58,18 +58,23 @@ export class Cookie {
 	 *
 	 * @param  {string} name Cookie's identification
 	 * @param  {string} value Cookie's value
-	 * @param  {number} expires Cookie's expiration date in days from now. If it's undefined the cookie is a session Cookie
+	 * @param  {number} expires Cookie's expiration date in days from now or at a specific date from a Date object. If it's undefined the cookie is a session Cookie
 	 * @param  {string} path Path relative to the domain where the cookie should be avaiable. Default /
 	 * @param  {string} domain Domain where the cookie should be avaiable. Default current domain
 	 * @param  {boolean} secure If true, the cookie will only be available through a secured connection
 	 */
-	public static set(name: string, value: string, expires?: number, path?: string, domain?: string, secure?: boolean) {
+	public static set(name: string, value: string, expires?: number | Date, path?: string, domain?: string, secure?: boolean) {
 		let cookieStr = encodeURIComponent(name) + '=' + encodeURIComponent(value) + ';';
 
 		if (expires) {
-			let dtExpires = new Date(new Date().getTime() + expires * 1000 * 60 * 60 * 24);
-			cookieStr += 'expires=' + dtExpires.toUTCString() + ';';
+			if (typeof expires === 'number') {
+				let dtExpires = new Date(new Date().getTime() + expires * 1000 * 60 * 60 * 24);
+				cookieStr += 'expires=' + dtExpires.toUTCString() + ';';
+			} else {
+				cookieStr += 'expires=' + expires.toUTCString() + ';';
+			}
 		}
+		 
 		if (path) {
 			cookieStr += 'path=' + path + ';';
 		}
