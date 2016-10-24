@@ -51,8 +51,11 @@ import { Cookie } from 'ng2-cookies/ng2-cookies';
 Cookie.set('cookieName', 'cookieValue');
 Cookie.set('cookieName', 'cookieValue', 10 /*days from now*/);
 Cookie.set('cookieName', 'cookieValue', 10, '/myapp/', 'mydomain.com', true /* https only */ );
+let dt = new Date('October 13, 2017 11:13:45');
+Cookie.set('cookieName', 'cookieValue', dt);
+Cookie.set('cookieName', 'cookieValue', dt, '/myapp/', 'mydomain.com', true /* https only */ );
 
-Cookie.check('cookieName'); 
+Cookie.check('cookieName');
 
 let myCookie = Cookie.get('cookieName');
 
