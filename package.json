@@ -31,5 +31,9 @@
   },
   "engines": {
     "node": ">=4.1.0"
+  },
+  "license": {
+    "type": "MIT",
+    "url": "https://opensource.org/licenses/MIT"
   }
 }
