@@ -1,27 +1,18 @@
 {
   "compilerOptions": {
     "noImplicitAny": true,
-    "module": "es2015",
-    "target": "es5",
-    "moduleResolution": "node",
+    "module": "commonjs",
+    "target": "ES5",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "sourceMap": true,
-    "declaration": true,
-    "lib": [
-      "dom",
-      "es2015"
-    ]
+    "declaration": true
   },
   "files": [
-    "index.ts",
+    "src/index.ts",
     "src/cookie.ts"
   ],
   "exclude": [
     "node_modules"
-  ],
-  "angularCompilerOptions": {
-    "strictMetadataEmit": true,
-    "skipTemplateCodegen": true
-  }
+  ]
 }
