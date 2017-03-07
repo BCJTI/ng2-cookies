@@ -5,7 +5,7 @@ export class Cookie {
 
 	/**
 	 * Checks the existence of a single cookie by it's name
-	 *
+	 * 
 	 * @param  {string} name Identification of the cookie
 	 * @returns existence of the cookie
 	 */
@@ -30,7 +30,7 @@ export class Cookie {
 			return decodeURIComponent(result[1]);
 		} else {
 			return '';
-		}
+		}	
 	}
 
 	/**
@@ -74,7 +74,7 @@ export class Cookie {
 				cookieStr += 'expires=' + expires.toUTCString() + ';';
 			}
 		}
-
+		 
 		if (path) {
 			cookieStr += 'path=' + path + ';';
 		}
@@ -97,7 +97,10 @@ export class Cookie {
 	 * @param  {string} domain Domain where the cookie should be avaiable. Default current domain
 	 */
 	public static delete(name: string, path?: string, domain?: string) {
-		Cookie.set(name, '', -1, path, domain);
+		// If the cookie exists
+		if (Cookie.get(name)) {
+			Cookie.set(name, '', -1, path, domain);
+		}
 	}
 
 	/**
