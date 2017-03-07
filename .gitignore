@@ -7,6 +7,9 @@ npm-debug.log
 *.map
 *.d.ts
 
+# NGC
+*.metadata.json
+
 # JetBrains
 .idea
 .project
