@@ -97,10 +97,7 @@ export class Cookie {
 	 * @param  {string} domain Domain where the cookie should be avaiable. Default current domain
 	 */
 	public static delete(name: string, path?: string, domain?: string) {
-		// If the cookie exists
-		if (Cookie.get(name)) {
-			Cookie.set(name, '', -1, path, domain);
-		}
+		Cookie.set(name, '', -1, path, domain);
 	}
 
 	/**
