@@ -11,6 +11,7 @@ npm-debug.log
 .idea
 .project
 .settings
+.vscode/*
 .idea/*
 *.iml
 

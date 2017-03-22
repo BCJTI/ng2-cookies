@@ -26,6 +26,10 @@ Look at the [wiki](https://github.com/BCJTI/ng2-cookies/wiki/Minimum-running-exa
 :---: |:---: |:---: |:---: |:---: |:---: |:---: |
 [Carcamano](https://github.com/carcamano) |[Bigous](https://github.com/bigous) |[Sasidhar](https://github.com/sasidhar) |[Iloveyo123u1](https://github.com/iloveyo123u1) |[Etwillbefine](https://github.com/etwillbefine) |[Josx](https://github.com/josx)|[Tyx](https://github.com/tyxz) |
 
+[<img alt="carcamano" src="https://avatars.githubusercontent.com/u/16885475?v=3&s=117" width="117">](https://github.com/ste4net) |
+:---: |
+[ste4net](https://github.com/ste4net) |
+
 ## License
 MIT © [Felipe Rebelo Lopes](http://github.com/carcamano)
 
