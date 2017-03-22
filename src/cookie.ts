@@ -1,3 +1,4 @@
+
 /**
  * Class Cookie - Holds static functions to deal with Cookies
  */
@@ -10,6 +11,7 @@ export class Cookie {
 	 * @returns existence of the cookie
 	 */
 	public static check(name: string): boolean {
+		if(typeof document === "undefined") return false;  // Check if document exist avoiding issues on server side prerendering	
 		name = encodeURIComponent(name);
 		let regexp = new RegExp('(?:^' + name + '|;\\s*' + name + ')=(.*?)(?:;|$)', 'g');
 		let exists = regexp.test(document.cookie);
