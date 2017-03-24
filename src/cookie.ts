@@ -2,7 +2,7 @@
 /**
  * Class Cookie - Holds static functions to deal with Cookies
  */
-export class Cookie {
+export class CookieService {
 
 	/**
 	 * Checks the existence of a single cookie by it's name
@@ -10,7 +10,7 @@ export class Cookie {
 	 * @param  {string} name Identification of the cookie
 	 * @returns existence of the cookie
 	 */
-	public static check(name: string): boolean {
+	public check(name: string): boolean {
 		if(typeof document === "undefined") return false;  // Check if document exist avoiding issues on server side prerendering	
 		name = encodeURIComponent(name);
 		let regexp = new RegExp('(?:^' + name + '|;\\s*' + name + ')=(.*?)(?:;|$)', 'g');
@@ -24,8 +24,8 @@ export class Cookie {
 	 * @param  {string} name Identification of the Cookie
 	 * @returns The Cookie's value
 	 */
-	public static get(name: string): string  {
-		if (Cookie.check(name)) {
+	public get(name: string): string  {
+		if (this.check(name)) {
 			name = encodeURIComponent(name);
 			let regexp = new RegExp('(?:^' + name + '|;\\s*' + name + ')=(.*?)(?:;|$)', 'g');
 			let result = regexp.exec(document.cookie);
@@ -40,7 +40,7 @@ export class Cookie {
 	 *
 	 * @returns Object with all Cookies
 	 */
-	public static getAll(): any {
+	public getAll(): any {
 		let cookies: any = {};
 
 		if (document.cookie && document.cookie != '') {
@@ -65,7 +65,7 @@ export class Cookie {
 	 * @param  {string} domain Domain where the cookie should be avaiable. Default current domain
 	 * @param  {boolean} secure If true, the cookie will only be available through a secured connection
 	 */
-	public static set(name: string, value: string, expires?: number | Date, path?: string, domain?: string, secure?: boolean) {
+	public set(name: string, value: string, expires?: number | Date, path?: string, domain?: string, secure?: boolean) {
 		let cookieStr = encodeURIComponent(name) + '=' + encodeURIComponent(value) + ';';
 
 		if (expires) {
@@ -98,21 +98,23 @@ export class Cookie {
 	 * @param  {string} path Path relative to the domain where the cookie should be avaiable. Default /
 	 * @param  {string} domain Domain where the cookie should be avaiable. Default current domain
 	 */
-	public static delete(name: string, path?: string, domain?: string) {
-		Cookie.set(name, '', -1, path, domain);
+	public delete(name: string, path?: string, domain?: string): void {
+		this.set(name, '', -1, path, domain);
 	}
 
 	/**
 	 * Delete all cookie avaiable
 	 */
-	public static deleteAll(path?: string, domain?: string): any {
-		let cookies: any = Cookie.getAll();
+	public deleteAll(path?: string, domain?: string): void {
+		let cookies: any = this.getAll();
 
 		for (let cookieName in cookies) {
-			Cookie.delete(cookieName, path, domain);
+			this.delete(cookieName, path, domain);
 		}
 
 	}
 
 
 }
+
+export const Cookie = new CookieService;
