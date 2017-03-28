@@ -6,12 +6,12 @@ export class CookieService {
 
 	/**
 	 * Checks the existence of a single cookie by it's name
-	 * 
+	 *
 	 * @param  {string} name Identification of the cookie
 	 * @returns existence of the cookie
 	 */
 	public check(name: string): boolean {
-		if(typeof document === "undefined") return false;  // Check if document exist avoiding issues on server side prerendering	
+		if (typeof document === "undefined") return false;  // Check if document exist avoiding issues on server side prerendering
 		name = encodeURIComponent(name);
 		let regexp = new RegExp('(?:^' + name + '|;\\s*' + name + ')=(.*?)(?:;|$)', 'g');
 		let exists = regexp.test(document.cookie);
@@ -24,7 +24,7 @@ export class CookieService {
 	 * @param  {string} name Identification of the Cookie
 	 * @returns The Cookie's value
 	 */
-	public get(name: string): string  {
+	public get(name: string): string {
 		if (this.check(name)) {
 			name = encodeURIComponent(name);
 			let regexp = new RegExp('(?:^' + name + '|;\\s*' + name + ')=(.*?)(?:;|$)', 'g');
@@ -32,7 +32,7 @@ export class CookieService {
 			return decodeURIComponent(result[1]);
 		} else {
 			return '';
-		}	
+		}
 	}
 
 	/**
@@ -76,7 +76,7 @@ export class CookieService {
 				cookieStr += 'expires=' + expires.toUTCString() + ';';
 			}
 		}
-		 
+
 		if (path) {
 			cookieStr += 'path=' + path + ';';
 		}
