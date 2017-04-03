@@ -117,4 +117,4 @@ export class CookieService {
 
 }
 
-export const Cookie = new CookieService;
+export const Cookie = new CookieService();
