@@ -43,10 +43,11 @@ export class CookieService {
 	public getAll(): any {
 		let cookies: any = {};
 
+		// tslint:disable-next-line:triple-equals
 		if (document.cookie && document.cookie != '') {
 			let split = document.cookie.split(';');
-			for (let i = 0; i < split.length; i++) {
-				let currCookie = split[i].split('=');
+			for (let s of split) {
+				let currCookie = s.split('=');
 				currCookie[0] = currCookie[0].replace(/^ /, '');
 				cookies[decodeURIComponent(currCookie[0])] = decodeURIComponent(currCookie[1]);
 			}
@@ -108,12 +109,11 @@ export class CookieService {
 	public deleteAll(path?: string, domain?: string): void {
 		let cookies: any = this.getAll();
 
-		for (let cookieName in cookies) {
+		for (let cookieName of Object.keys(cookies)) {
 			this.delete(cookieName, path, domain);
 		}
 
 	}
-
 
 }
 
