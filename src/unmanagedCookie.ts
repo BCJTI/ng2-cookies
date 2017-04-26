@@ -1,8 +1,8 @@
 
 /**
- * Class Cookie - Holds static functions to deal with Cookies
+ * Class UnmanagedCookieService - Holds static functions to deal with Cookies
  */
-export class CookieService {
+export class UnmanagedCookieService {
 
 	/**
 	 * Checks the existence of a single cookie by it's name
@@ -12,7 +12,6 @@ export class CookieService {
 	 */
 	public check(name: string): boolean {
 		if (typeof document === "undefined") return false;  // Check if document exist avoiding issues on server side prerendering
-		name = encodeURIComponent(name);
 		let regexp = new RegExp('(?:^' + name + '|;\\s*' + name + ')=(.*?)(?:;|$)', 'g');
 		let exists = regexp.test(document.cookie);
 		return exists;
@@ -26,10 +25,9 @@ export class CookieService {
 	 */
 	public get(name: string): string {
 		if (this.check(name)) {
-			name = encodeURIComponent(name);
 			let regexp = new RegExp('(?:^' + name + '|;\\s*' + name + ')=(.*?)(?:;|$)', 'g');
 			let result = regexp.exec(document.cookie);
-			return decodeURIComponent(result[1]);
+			return result[1];
 		} else {
 			return '';
 		}
@@ -49,7 +47,7 @@ export class CookieService {
 			for (let s of split) {
 				let currCookie = s.split('=');
 				currCookie[0] = currCookie[0].replace(/^ /, '');
-				cookies[decodeURIComponent(currCookie[0])] = decodeURIComponent(currCookie[1]);
+				cookies[currCookie[0]] = currCookie[1];
 			}
 		}
 
@@ -67,7 +65,7 @@ export class CookieService {
 	 * @param  {boolean} secure If true, the cookie will only be available through a secured connection
 	 */
 	public set(name: string, value: string, expires?: number | Date, path?: string, domain?: string, secure?: boolean) {
-		let cookieStr = encodeURIComponent(name) + '=' + encodeURIComponent(value) + ';';
+		let cookieStr = name + '=' + value + ';';
 
 		if (expires) {
 			if (typeof expires === 'number') {
@@ -117,4 +115,4 @@ export class CookieService {
 
 }
 
-export const Cookie = new CookieService();
+export const UnmanagedCookie = new UnmanagedCookieService();
