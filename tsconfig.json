@@ -6,7 +6,13 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "sourceMap": true,
-    "declaration": true
+    "declaration": true,
+    "stripInternal": true,
+    "outDir": "./lib",
+    "lib": [
+      "es2015",
+      "dom"
+    ]
   },
   "files": [
     "src/index.ts",
@@ -15,5 +21,9 @@
   ],
   "exclude": [
     "node_modules"
-  ]
+  ],
+  "angularCompilerOptrions": {
+    "skipTemplateCodegen": false,
+    "strictMetadataEmit": true
+  }
 }

@@ -2,10 +2,9 @@
 node_modules/*
 npm-debug.log
 
-# TypeScript
-*.js
-*.map
-*.d.ts
+# Build generated files
+lib/**/*
+src/**/*.ngsummary.json
 
 # JetBrains
 .idea
