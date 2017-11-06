@@ -1,4 +1,6 @@
+import { Injectable } from '@angular/core';
 
+@Injectable()
 /**
  * Class Cookie - Holds static functions to deal with Cookies
  */
