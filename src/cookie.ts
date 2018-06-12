@@ -27,10 +27,11 @@ export class CookieService {
 	 * @returns The Cookie's value
 	 */
 	public get(name: string): string {
-		if (this.check(name)) {
-			name = encodeURIComponent(name);
-			let regexp = new RegExp('(?:^' + name + '|;\\s*' + name + ')=(.*?)(?:;|$)', 'g');
-			let result = regexp.exec(document.cookie);
+		if (typeof document === "undefined") return '';
+		name = encodeURIComponent(name);
+		let regexp = new RegExp('(?:^' + name + '|;\\s*' + name + ')=(.*?)(?:;|$)', 'g');
+		let result = regexp.exec(document.cookie);
+		if (result && !!result[0] && !!result[1]) {
 			return decodeURIComponent(result[1]);
 		} else {
 			return '';
