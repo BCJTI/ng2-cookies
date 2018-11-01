@@ -80,9 +80,10 @@ export class CookieService {
 			}
 		}
 
-		if (path) {
-			cookieStr += 'path=' + path + ';';
+		if (!path) {
+			path = '/';
 		}
+		cookieStr += 'path=' + path + ';';
 		if (domain) {
 			cookieStr += 'domain=' + domain + ';';
 		}
