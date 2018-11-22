@@ -13,11 +13,9 @@ export class CookieService {
 	 * @returns existence of the cookie
 	 */
 	public check(name: string): boolean {
-		if (typeof document === "undefined") return false;  // Check if document exist avoiding issues on server side prerendering
-		name = encodeURIComponent(name);
-		let regexp = new RegExp('(?:^' + name + '|;\\s*' + name + ')=(.*?)(?:;|$)', 'g');
-		let exists = regexp.test(document.cookie);
-		return exists;
+		// Check if document exist avoiding issues on server side prerendering
+		if (typeof document === "undefined") return false;
+		return this.cookieHandler(name, 'test');
 	}
 
 	/**
@@ -28,13 +26,9 @@ export class CookieService {
 	 */
 	public get(name: string): string {
 		if (this.check(name)) {
-			name = encodeURIComponent(name);
-			let regexp = new RegExp('(?:^' + name + '|;\\s*' + name + ')=(.*?)(?:;|$)', 'g');
-			let result = regexp.exec(document.cookie);
-			return decodeURIComponent(result[1]);
-		} else {
-			return '';
+			return decodeURIComponent(this.cookieHandler(name, 'exec')[1]);
 		}
+		return '';
 	}
 
 	/**
@@ -91,7 +85,6 @@ export class CookieService {
 			cookieStr += 'secure;';
 		}
 
-		// console.log(cookieStr);
 		document.cookie = cookieStr;
 	}
 
@@ -115,9 +108,20 @@ export class CookieService {
 		for (let cookieName of Object.keys(cookies)) {
 			this.delete(cookieName, path, domain);
 		}
-
 	}
 
+	/**
+	 * @private
+	 * Cookie Handler - Reusable Method
+	 *
+	 * @param  {string} name Cookie's identification
+	 * @param  {string} methodName Method to be called
+	 */
+	private cookieHandler(name: string, methodName: string): any {
+		name = encodeURIComponent(name);
+		return (new RegExp('(?:^' + name + '|;\\s*' + name + ')=(.*?)(?:;|$)', 'g') as any)
+		[methodName](document.cookie);
+	}
 }
 
 export const Cookie = new CookieService();
