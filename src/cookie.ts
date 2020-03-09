@@ -67,8 +67,9 @@ export class CookieService {
 	 * @param  {string} path Path relative to the domain where the cookie should be avaiable. Default /
 	 * @param  {string} domain Domain where the cookie should be avaiable. Default current domain
 	 * @param  {boolean} secure If true, the cookie will only be available through a secured connection
+	 * @param  {string} sameSite SameSite's value should be 'None' | 'Lax' | 'Strict'
 	 */
-	public set(name: string, value: string, expires?: number | Date, path?: string, domain?: string, secure?: boolean) {
+	public set(name: string, value: string, expires?: number | Date, path?: string, domain?: string, secure?: boolean, sameSite?: 'None' | 'Lax' | 'Strict') {
 		let cookieStr = encodeURIComponent(name) + '=' + encodeURIComponent(value) + ';';
 
 		if (expires) {
@@ -86,6 +87,9 @@ export class CookieService {
 		cookieStr += 'path=' + path + ';';
 		if (domain) {
 			cookieStr += 'domain=' + domain + ';';
+		}
+		if (sameSite) {
+			cookieStr += `SameSite=${sameSite};`;
 		}
 		if (secure) {
 			cookieStr += 'secure;';
