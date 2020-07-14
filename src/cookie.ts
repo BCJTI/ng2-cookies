@@ -15,9 +15,8 @@ export class CookieService {
 	public check(name: string): boolean {
 		if (typeof document === "undefined") return false;  // Check if document exist avoiding issues on server side prerendering
 		name = encodeURIComponent(name);
-		let regexp = new RegExp('(?:^' + name + '|;\\s*' + name + ')=(.*?)(?:;|$)', 'g');
-		let exists = regexp.test(document.cookie);
-		return exists;
+		const regexp = new RegExp('(?:^' + name + '|;\\s*' + name + ')=(.*?)(?:;|$)', 'g');
+		return (regexp.test(document.cookie));
 	}
 
 	/**
@@ -29,8 +28,8 @@ export class CookieService {
 	public get(name: string): string {
 		if (this.check(name)) {
 			name = encodeURIComponent(name);
-			let regexp = new RegExp('(?:^' + name + '|;\\s*' + name + ')=(.*?)(?:;|$)', 'g');
-			let result = regexp.exec(document.cookie);
+			const regexp = new RegExp('(?:^' + name + '|;\\s*' + name + ')=(.*?)(?:;|$)', 'g');
+			const result = regexp.exec(document.cookie);
 			return decodeURIComponent(result[1]);
 		} else {
 			return '';
