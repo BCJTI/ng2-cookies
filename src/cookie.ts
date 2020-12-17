@@ -103,6 +103,9 @@ export class CookieService {
 	 * @param  {string} domain Domain where the cookie should be avaiable. Default current domain
 	 */
 	public delete(name: string, path?: string, domain?: string): void {
+		if (!path) {
+			path = '/';
+		}
 		this.set(name, '', -1, path, domain);
 	}
 
